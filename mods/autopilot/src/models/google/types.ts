@@ -16,21 +16,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ConversationSettings } from "./assistants";
-import { LanguageModel } from "./models";
-import { Voice } from "./voice";
+import { BaseModelParams } from "../types";
 
-enum LANGUAGE_MODEL_PROVIDER {
-  OPENAI = "openai",
-  GROQ = "groq",
-  OLLAMA = "ollama",
-  GOOGLE_GENAI = "google-genai"
+enum GoogleGenAIModel {
+  GEMINI_1_5_FLEX = "gemini-1.5-flex",
+  GEMINI_PRO = "gemini-pro"
 }
 
-type AutopilotParams = {
-  voice: Voice;
-  conversationSettings: ConversationSettings;
-  languageModel: LanguageModel;
+type GoogleGenAIParams = BaseModelParams & {
+  model: GoogleGenAIModel;
+  apiKey: string;
+  maxTokens: number;
+  temperature: number;
 };
 
-export { AutopilotParams, LANGUAGE_MODEL_PROVIDER };
+export { GoogleGenAIModel, GoogleGenAIParams };

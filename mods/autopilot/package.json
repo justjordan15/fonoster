@@ -42,6 +42,7 @@
     "@fonoster/voice": "^0.7.47",
     "@langchain/community": "^0.3.19",
     "@langchain/core": "^0.3.23",
+    "@langchain/google-genai": "^0.1.5",
     "@langchain/groq": "^0.1.2",
     "@langchain/ollama": "^0.1.2",
     "@langchain/openai": "^0.3.14",

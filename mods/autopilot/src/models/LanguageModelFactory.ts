@@ -32,6 +32,7 @@ import {
 import { BaseModelParams, TelephonyContext } from "./types";
 import { LANGUAGE_MODEL_PROVIDER } from "../types";
 import { Voice } from "../voice";
+import { LANGUAGE_MODEL_NAME as GOOGLE_GENAI, GoogleGenAIParams, GoogleGenAI } from "./google";
 
 const logger = getLogger({ service: "autopilot", filePath: __filename });
 
@@ -46,6 +47,7 @@ type LanguageModelConfigMap = {
   [LANGUAGE_MODEL_PROVIDER.OPENAI]: OpenAIParams;
   [LANGUAGE_MODEL_PROVIDER.GROQ]: GroqParams;
   [LANGUAGE_MODEL_PROVIDER.OLLAMA]: OllamaParams;
+  [LANGUAGE_MODEL_PROVIDER.GOOGLE_GENAI]: GoogleGenAIParams;
 };
 
 class LanguageModelFactory {
@@ -80,5 +82,6 @@ class LanguageModelFactory {
 LanguageModelFactory.registerLanguageModel(OPENAI_LLM_NAME, OpenAI);
 LanguageModelFactory.registerLanguageModel(GROQ_LLM_NAME, Groq);
 LanguageModelFactory.registerLanguageModel(OLLAMA_LLM_NAME, Ollama);
+LanguageModelFactory.registerLanguageModel(GOOGLE_GENAI, GoogleGenAI);
 
 export { LanguageModelFactory };
