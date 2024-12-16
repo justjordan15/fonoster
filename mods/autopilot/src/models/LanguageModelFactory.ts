@@ -32,7 +32,11 @@ import {
 import { BaseModelParams, TelephonyContext } from "./types";
 import { LANGUAGE_MODEL_PROVIDER } from "../types";
 import { Voice } from "../voice";
-import { LANGUAGE_MODEL_NAME as GOOGLE_GENAI, GoogleGenAIParams, GoogleGenAI } from "./google";
+import {
+  LANGUAGE_MODEL_NAME as GOOGLE_GENAI,
+  GoogleGenAIParams,
+  GoogleGenAI
+} from "./google";
 
 const logger = getLogger({ service: "autopilot", filePath: __filename });
 
