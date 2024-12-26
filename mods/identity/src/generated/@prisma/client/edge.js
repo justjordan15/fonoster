@@ -205,7 +205,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/psanders/Projects/fonoster/mods/identity/src/generated/@prisma/client",
+      "value": "/home/justjordan/fonoster/mods/identity/src/generated/@prisma/client",
       "fromEnvVar": null
     },
     "config": {
@@ -214,12 +214,12 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin-arm64",
+        "value": "debian-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/psanders/Projects/fonoster/mods/identity/schema.prisma",
+    "sourceFilePath": "/home/justjordan/fonoster/mods/identity/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
