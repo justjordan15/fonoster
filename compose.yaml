@@ -32,7 +32,8 @@ services:
       LOGS_TRANSPORT: ${LOGS_TRANSPORT}
       LOGS_FORMAT: ${LOGS_FORMAT}
     expose:
-      - 50051:50051
+      - "50051"
+      - "5432"
     volumes:
       - ./config/keys:/opt/fonoster/keys:ro
       - ./config/integrations.json:/opt/fonoster/integrations.json:ro
@@ -44,7 +45,7 @@ services:
       - ./config/assistant.json:/home/appuser/autopilot/config/assistant.json:ro
       - ./config/sample.pdf:/home/appuser/autopilot/config/sample.pdf:ro
     expose:
-      - 50061
+      - "50061"
     environment:
       # Workaround to avoid connecting to the identity service, 
       # which is currently broken in the autopilot service.
@@ -136,7 +137,7 @@ services:
     image: influxdb:2
     restart: unless-stopped
     expose:
-      - 8086
+      - "8086"
     environment:
       DOCKER_INFLUXDB_INIT_MODE: setup
       DOCKER_INFLUXDB_INIT_USERNAME: ${INFLUXDB_INIT_USERNAME}
@@ -152,7 +153,7 @@ services:
     image: nats:latest
     restart: unless-stopped
     expose:
-      - 4222
+      - "4222"
 
   envoy:
     image: envoyproxy/envoy:v1.31.0
@@ -166,9 +167,9 @@ services:
       #
       # - ./path/to/letsencrypt:/etc/letsencrypt:ro
     ports:
-      - 8449:8449
+      - "8449:8449"
       # If using letsencrypt, you need to expose port 443 and remove the default HTTP port (8449)
-      # - 443:443
+      # - "443:443"
 
 volumes:
   db:
